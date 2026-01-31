@@ -7,12 +7,10 @@ from dotenv import load_dotenv
 import pypdf
 import io
 
-# 1. Carrega as variáveis de ambiente
 load_dotenv()
 
 app = FastAPI()
 
-# 2. Configuração de CORS 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], 
@@ -21,7 +19,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 3. Configura a IA
 GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
 
 if not GOOGLE_API_KEY:
@@ -44,7 +41,6 @@ async def analyze_email(
     email_content = ""
 
     try:
-        # --- ETAPA 1: Ler o conteúdo ---
         if file:
             if file.filename.endswith(".pdf"):
                 pdf_reader = pypdf.PdfReader(file.file)
@@ -63,11 +59,10 @@ async def analyze_email(
         if not email_content.strip():
             return {"error": "Não foi possível ler o conteúdo do email."}
 
-        # --- ETAPA 2: Preparar para a IA ---
         cleaned_content = clean_text(email_content)
         
-        # AQUI ESTAVA O ERRO - Agora corrigido com gemini-pro e indentação certa
-        model = genai.GenerativeModel('gemini-pro')
+        # --- AQUI ESTÁ A CORREÇÃO ---
+        model = genai.GenerativeModel('models/gemini-2.0-flash')
         
         prompt = f"""
         Você é um sistema de triagem de emails para uma empresa financeira.
@@ -88,9 +83,7 @@ async def analyze_email(
         }}
         """
 
-        # --- ETAPA 3: Chamar a IA ---
         response = model.generate_content(prompt)
-        
         json_str = response.text.replace("```json", "").replace("```", "").strip()
         
         return {"result": json_str}
