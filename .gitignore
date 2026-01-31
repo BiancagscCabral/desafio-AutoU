@@ -1,0 +1,121 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+Pipfile.lock
+poetry.lock
+
+# Pyre typechecker
+.pyre/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# OneDrive/temp files
+~$*
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite3
+
+# Jupyter
+.ipynb_checkpoints
+
+# Type checkers / caches
+.mypy_cache/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Additional build artifacts
+pip-wheel-metadata/
+*.egg-info/
+
+# Coverage reports
+coverage.xml
+
+# Ignore local secrets
+.env.local
+secrets.yml
+
+# End of file
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+
+
+# Environment variables
+.env
+
+# VS Code settings
+.vscode/
